@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>Sujith's Cracker - Shop Owner Admin Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&amp;family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-variant": "#dee3eb", "on-primary": "#ffffff", "charcoal-ink": "#20252B", "secondary": "#4d5f7b", "on-primary-fixed-variant": "#5d4200", "tertiary": "#615e56", "diwali-gold": "#F4B51B", "on-tertiary-fixed-variant": "#49473f", "on-tertiary-container": "#504e46", "cream-canvas": "#FFF9EE", "on-secondary-fixed-variant": "#354862", "primary-container": "#f4b51b", "surface-container-highest": "#dee3eb", "on-surface": "#171c22", "inverse-surface": "#2c3137", "alert-red": "#C94232", "surface-container": "#eaeef6", "on-primary-container": "#664900", "on-secondary": "#ffffff", "pure-surface": "#FFFFFF", "surface-dim": "#d6dae2", "secondary-fixed": "#d4e3ff", "surface-container-high": "#e4e8f1", "primary-fixed-dim": "#fcbc24", "success-green": "#23834A", "primary": "#7b5800", "on-secondary-container": "#4f627e", "error-container": "#ffdad6", "primary-fixed": "#ffdea4", "inverse-primary": "#fcbc24", "tertiary-fixed": "#e7e2d7", "on-primary-fixed": "#261900", "on-surface-variant": "#504533", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "night-navy": "#10243D", "outline-variant": "#d4c4ac", "muted-slate": "#68717C", "on-error-container": "#93000a", "secondary-container": "#cbdeff", "tertiary-container": "#c4bfb5", "tertiary-fixed-dim": "#cbc6bc", "secondary-fixed-dim": "#b5c8e8", "on-tertiary-fixed": "#1d1c15", "background": "#f7f9ff", "on-tertiary": "#ffffff", "surface-container-low": "#f0f4fc", "inverse-on-surface": "#edf1f9", "surface": "#f7f9ff", "on-secondary-fixed": "#071c35", "error": "#ba1a1a", "soft-border": "#E8E1D5", "surface-tint": "#7b5800", "surface-bright": "#f7f9ff", "outline": "#827561", "on-background": "#171c22" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-mobile": "1rem", "space-xs": "0.5rem", "space-md": "1.5rem", "gutter": "1.5rem", "space-lg": "2rem", "space-sm": "1rem", "margin-mobile": "1rem", "margin": "2rem", "space-xl": "3rem" }, "fontFamily": { "display": [ "Outfit" ], "mono-price-lg": [ "Geist Mono" ], "body-lg": [ "Outfit" ], "label-lg": [ "Outfit" ], "mono-price-md": [ "Geist Mono" ], "body-md": [ "Outfit" ], "mono-data": [ "Geist Mono" ], "headline-md": [ "Outfit" ], "headline-sm": [ "Outfit" ], "headline-lg-mobile": [ "Outfit" ], "label-md": [ "Outfit" ], "body-sm": [ "Outfit" ], "display-mobile": [ "Outfit" ], "headline-lg": [ "Outfit" ] }, "fontSize": { "display": [ "48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" } ], "mono-price-lg": [ "24px", { "lineHeight": "28px", "fontWeight": "700" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "mono-price-md": [ "18px", { "lineHeight": "24px", "fontWeight": "600" } ], "body-md": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "mono-data": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.03em", "fontWeight": "500" } ], "headline-md": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "headline-lg-mobile": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "body-sm": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "display-mobile": [ "34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "800" } ], "headline-lg": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "700" } ] } } } };</script></head><body class="bg-cream-canvas font-body-md text-charcoal-ink min-h-screen"><aside class="fixed left-0 top-0 h-full w-64 bg-night-navy z-50 flex flex-col pt-6 pb-6 text-cream-canvas shadow-[8px_0_24px_-4px_rgba(16,36,61,0.12)]"><div class="px-6 mb-8 flex items-center gap-3"><img alt="Sujith's Cracker Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V_AeblyAJbFpEZuUAWXlxGu9B3UTPIrU2-H_SKBwaVk_nZ3VQ2-dM_SJhKXi5s3sdaRczHFQGP-Kq8ldtFKx04HvvxCDOh1_o3JNNfR5J71It9RcgH0MmEAfxgXOPYNhdSVs_qGiL8yG4QzdAHXySvayEfBcdg90JwdQ_rMq9MTs5vIuKMyu-Kf6q2GUTxsSYhSD3NHJp6iOP9_GWH6jaW-FV4lmAew6Ix0i_bbpLkM7AWFRzrkg4bBnXU"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-pure-surface font-bold leading-none">Owner Depot</span><span class="font-mono-data text-mono-data text-diwali-gold mt-0.5">Admin Panel v2.4</span></div></div><nav class="flex-1 px-4 space-y-1.5" data-active-classes="bg-diwali-gold text-charcoal-ink font-bold rounded-lg shadow-sm"><a aria-current="page" class="flex items-center px-4 py-3 transition-all bg-diwali-gold text-charcoal-ink font-bold rounded-lg shadow-sm" data-path="shop-owner-admin-dashboard" href="#"><span class="font-label-lg text-label-lg">Overview &amp; Metrics</span></a><a class="flex items-center px-4 py-3 rounded-lg text-surface-variant hover:bg-white/10 hover:text-cream-canvas transition-all" data-path="my-orders" href="#"><span class="font-label-lg text-label-lg">Live Customer Orders</span></a><a class="flex items-center px-4 py-3 rounded-lg text-surface-variant hover:bg-white/10 hover:text-cream-canvas transition-all" data-path="crackers-catalog" href="#"><span class="font-label-lg text-label-lg">Inventory &amp; Stock</span></a><a class="flex items-center px-4 py-3 rounded-lg text-surface-variant hover:bg-white/10 hover:text-cream-canvas transition-all" data-path="payment" href="#"><span class="font-label-lg text-label-lg">UPI Verification Queue</span></a></nav><div class="px-4 mt-auto"><div class="p-3 bg-white/5 rounded-lg"><span class="font-label-md text-label-md text-diwali-gold font-semibold block">Store Operational</span><span class="font-mono-data text-mono-data text-surface-variant block mt-1">Dispatch status: On-Time</span></div><a class="mt-3 block text-center py-2 text-surface-variant hover:text-diwali-gold font-label-md text-label-md transition-colors" data-path="home" href="#">Return to Public Store →</a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-20 bg-pure-surface shadow-[0_4px_20px_-4px_rgba(16,36,61,0.06)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-3"><img alt="Sujith's Cracker Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V_AeblyAJbFpEZuUAWXlxGu9B3UTPIrU2-H_SKBwaVk_nZ3VQ2-dM_SJhKXi5s3sdaRczHFQGP-Kq8ldtFKx04HvvxCDOh1_o3JNNfR5J71It9RcgH0MmEAfxgXOPYNhdSVs_qGiL8yG4QzdAHXySvayEfBcdg90JwdQ_rMq9MTs5vIuKMyu-Kf6q2GUTxsSYhSD3NHJp6iOP9_GWH6jaW-FV4lmAew6Ix0i_bbpLkM7AWFRzrkg4bBnXU"/><span class="font-headline-sm text-headline-sm text-night-navy font-bold">Operations Center</span></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-2 bg-cream-canvas px-3 py-1.5 rounded-lg"><span class="w-2.5 h-2.5 rounded-full bg-success-green animate-pulse"></span><span class="font-mono-data text-mono-data text-night-navy font-medium">Sivakasi Godown: Connected</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-20 bg-cream-canvas min-h-screen px-gutter py-space-lg w-full"><div class="flex flex-col w-full gap-space-lg">
+<!-- Operational Context Header Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm bg-pure-surface p-space-md rounded-xl shadow-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-mono-data text-mono-data uppercase tracking-wider text-night-navy font-bold">Depot Console</span>
+<span class="w-1.5 h-1.5 rounded-full bg-diwali-gold"></span>
+<span class="font-mono-data text-mono-data text-muted-slate">Sivakasi Line Hub #04</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-night-navy font-bold tracking-tight">Today's Dispatch &amp; Financial Reconciliation</h1>
+</div>
+<div class="flex items-center flex-wrap gap-2">
+<div class="flex items-center gap-2 bg-cream-canvas px-3 py-2 rounded-lg">
+<span class="material-symbols-outlined text-night-navy text-[18px]">calendar_today</span>
+<span class="font-mono-data text-mono-data font-semibold text-night-navy">Diwali Rush: D-4</span>
+</div>
+<button class="flex items-center gap-1.5 bg-cream-canvas hover:bg-surface-variant text-night-navy px-3 py-2 rounded-lg transition-colors font-label-md text-label-md" onclick="refreshDashboard()">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Sync Orders</span>
+</button>
+<button class="flex items-center gap-1.5 bg-diwali-gold hover:bg-primary-fixed-dim text-charcoal-ink font-semibold px-4 py-2 rounded-lg transition-transform active:translate-y-0.5 shadow-sm font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+<span>Bulk Sivakasi Manifest</span>
+</button>
+</div>
+</div>
+<!-- 1. Top KPI Summary Cards (4 Metrics) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm">
+<!-- Metric 1: Today's Orders -->
+<div class="bg-pure-surface p-5 rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-muted-slate uppercase tracking-wider">Today's Orders</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-night-navy">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="font-mono-price-lg text-mono-price-lg text-night-navy">38</span>
+<span class="font-body-sm text-body-sm text-muted-slate">Bookings</span>
+</div>
+<div class="mt-3 flex items-center gap-1.5">
+<span class="inline-flex items-center text-success-green font-mono-data text-mono-data font-semibold">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> 14%
+        </span>
+<span class="font-body-sm text-body-sm text-muted-slate">vs yesterday (33)</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-night-navy"></div>
+</div>
+<!-- Metric 2: Today's Revenue -->
+<div class="bg-pure-surface p-5 rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-muted-slate uppercase tracking-wider">Today's Revenue</span>
+<div class="w-8 h-8 rounded-lg bg-cream-canvas flex items-center justify-center text-diwali-gold">
+<span class="material-symbols-outlined text-[20px]">currency_rupee</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="font-mono-price-lg text-mono-price-lg text-night-navy">₹1,48,650</span>
+</div>
+<div class="mt-3 flex items-center gap-2">
+<span class="font-mono-data text-mono-data text-muted-slate">Avg: ₹3,911/cart</span>
+<span class="w-1 h-1 rounded-full bg-soft-border"></span>
+<span class="font-mono-data text-mono-data text-success-green">94% Prepaid</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-diwali-gold"></div>
+</div>
+<!-- Metric 3: Pending UPI Queue -->
+<div class="bg-pure-surface p-5 rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-alert-red uppercase tracking-wider font-semibold">Verification Queue</span>
+<div class="w-8 h-8 rounded-lg bg-error-container flex items-center justify-center text-alert-red">
+<span class="material-symbols-outlined text-[20px]">pending_actions</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="font-mono-price-lg text-mono-price-lg text-alert-red">6</span>
+<span class="font-body-sm text-body-sm text-charcoal-ink font-medium">Orders Pending</span>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="font-mono-data text-mono-data text-alert-red font-semibold bg-error-container px-2 py-0.5 rounded">Action Required</span>
+<span class="font-mono-data text-mono-data text-muted-slate">Oldest: 18m ago</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-alert-red"></div>
+</div>
+<!-- Metric 4: Low Stock Alert -->
+<div class="bg-pure-surface p-5 rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-muted-slate uppercase tracking-wider">Depot Inventory</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">warehouse</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="font-mono-price-lg text-mono-price-lg text-night-navy">3</span>
+<span class="font-body-sm text-body-sm text-alert-red font-semibold">Low Stock SKUs</span>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="font-mono-data text-mono-data text-muted-slate">Depot buffer: 92%</span>
+<a class="font-label-md text-label-md text-primary font-semibold hover:underline" href="#inventory-section">Restock →</a>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-surface-variant"></div>
+</div>
+</div>
+<!-- Operational Flow Guide Banner -->
+<div class="bg-night-navy text-cream-canvas rounded-xl p-4 shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3 text-center md:text-left">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-diwali-gold text-[20px]">sync_alt</span>
+<span class="font-label-lg text-label-lg font-semibold text-pure-surface">Strict Sivakasi Dispatch Pipeline</span>
+</div>
+<div class="flex items-center justify-center gap-2 overflow-x-auto py-1">
+<span class="font-mono-data text-mono-data px-2.5 py-1 bg-white/10 rounded text-pure-surface">1. Order Placed</span>
+<span class="text-diwali-gold text-xs">→</span>
+<span class="font-mono-data text-mono-data px-2.5 py-1 bg-white/10 rounded text-pure-surface">2. UPI UTR Sent</span>
+<span class="text-diwali-gold text-xs">→</span>
+<span class="font-mono-data text-mono-data px-2.5 py-1 bg-diwali-gold text-charcoal-ink font-bold">3. Owner Verifies</span>
+<span class="text-diwali-gold text-xs">→</span>
+<span class="font-mono-data text-mono-data px-2.5 py-1 bg-white/10 rounded text-pure-surface">4. Call Customer</span>
+<span class="text-diwali-gold text-xs">→</span>
+<span class="font-mono-data text-mono-data px-2.5 py-1 bg-white/10 rounded text-pure-surface">5. Sivakasi Dispatch</span>
+</div>
+</div>
+</div>
+<!-- 2. Order Verification & Management Table -->
+<div class="bg-pure-surface rounded-xl shadow-sm flex flex-col overflow-hidden">
+<div class="p-5 flex flex-col md:flex-row md:items-center justify-between gap-3 bg-pure-surface">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-alert-red animate-ping"></div>
+<h2 class="font-headline-sm text-headline-sm text-night-navy font-bold">Live Orders &amp; Payment Clearance</h2>
+<span class="font-mono-data text-mono-data px-2 py-0.5 rounded-full bg-cream-canvas text-charcoal-ink font-semibold">4 New Actionable</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="relative">
+<input class="bg-cream-canvas font-body-sm text-body-sm text-charcoal-ink pl-8 pr-3 py-1.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-diwali-gold w-64 placeholder:text-muted-slate" placeholder="Search by UTR or Customer..." type="text"/>
+<span class="material-symbols-outlined absolute left-2.5 top-2 text-muted-slate text-[16px]">search</span>
+</div>
+<button class="bg-cream-canvas hover:bg-surface-variant text-night-navy font-label-md text-label-md px-3 py-1.5 rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+<span>Filter</span>
+</button>
+</div>
+</div>
+<!-- Responsive Table -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left">
+<thead class="bg-cream-canvas text-muted-slate font-mono-data text-mono-data uppercase tracking-wider">
+<tr>
+<th class="py-3 px-4">Order ID</th>
+<th class="py-3 px-4">Customer &amp; Phone</th>
+<th class="py-3 px-4">Cart Breakdown</th>
+<th class="py-3 px-4">Total</th>
+<th class="py-3 px-4">Payment Clearance</th>
+<th class="py-3 px-4">Fulfillment Stage</th>
+<th class="py-3 px-4 text-right">Owner Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-cream-canvas font-body-sm text-body-sm text-charcoal-ink">
+<!-- Order 1: Pending UTR -->
+<tr class="hover:bg-cream-canvas/50 transition-colors">
+<td class="py-4 px-4 font-mono-price-md text-mono-price-md font-bold text-night-navy">
+              #SC1048
+              <span class="block font-mono-data text-mono-data text-muted-slate font-normal mt-0.5">Today 11:42 AM</span>
+</td>
+<td class="py-4 px-4">
+<span class="font-headline-sm text-body-md font-bold text-night-navy block">Karthik S.</span>
+<a class="font-mono-data text-mono-data text-muted-slate hover:text-primary flex items-center gap-1 mt-0.5" href="tel:+919842177340">
+<span class="material-symbols-outlined text-[14px]">call</span> +91 98421 77340
+              </a>
+<span class="font-label-md text-label-md text-muted-slate block mt-1">Madurai (Direct Truck)</span>
+</td>
+<td class="py-4 px-4">
+<span class="font-label-md text-label-md font-semibold text-night-navy block">4 Items · 12 Packs</span>
+<span class="font-mono-data text-mono-data text-muted-slate block mt-0.5">1000 Wala, Flower Pots, Chakkars</span>
+</td>
+<td class="py-4 px-4 font-mono-price-md text-mono-price-md font-bold text-night-navy">
+              ₹4,100
+              <span class="block font-mono-data text-mono-data text-success-green font-normal">Free Sivakasi Hub delivery</span>
+</td>
+<td class="py-4 px-4">
+<div class="inline-flex flex-col gap-1">
+<span class="inline-flex items-center gap-1 bg-diwali-gold/20 text-charcoal-ink px-2.5 py-1 rounded font-mono-data text-mono-data font-bold">
+<span class="w-2 h-2 rounded-full bg-diwali-gold animate-pulse"></span>
+                  UPI Verification Pending
+                </span>
+<span class="font-mono-data text-mono-data text-charcoal-ink bg-surface-container px-2 py-0.5 rounded select-all font-semibold">
+                  UTR: 428910834920
+                </span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-error-container text-alert-red font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+                Awaiting Verification
+              </span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="bg-success-green hover:opacity-90 text-pure-surface font-label-md text-label-md px-2.5 py-1.5 rounded-lg flex items-center gap-1 shadow-sm" onclick="verifyOrder('SC1048')" title="Verify UPI Bank Match">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Verify</span>
+</button>
+<a class="bg-pure-surface hover:bg-cream-canvas text-charcoal-ink p-1.5 rounded-lg shadow-sm border-0" href="https://wa.me/919842177340?text=Vanakkam%20Karthik,%20Sujith's%20Crackers%20here.%20We%20received%20your%20order%20%23SC1048." target="_blank" title="WhatsApp Customer">
+<span class="material-symbols-outlined text-success-green text-[18px]">chat</span>
+</a>
+<button class="bg-cream-canvas hover:bg-surface-variant text-night-navy p-1.5 rounded-lg" onclick="viewDetails('SC1048')" title="View Slip">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Order 2: Verified & Preparing -->
+<tr class="hover:bg-cream-canvas/50 transition-colors">
+<td class="py-4 px-4 font-mono-price-md text-mono-price-md font-bold text-night-navy">
+              #SC1047
+              <span class="block font-mono-data text-mono-data text-muted-slate font-normal mt-0.5">Today 10:15 AM</span>
+</td>
+<td class="py-4 px-4">
+<span class="font-headline-sm text-body-md font-bold text-night-navy block">Anand Rajan</span>
+<a class="font-mono-data text-mono-data text-muted-slate hover:text-primary flex items-center gap-1 mt-0.5" href="tel:+919443211090">
+<span class="material-symbols-outlined text-[14px]">call</span> +91 94432 11090
+              </a>
+<span class="font-label-md text-label-md text-muted-slate block mt-1">Coimbatore (Parcel Office)</span>
+</td>
+<td class="py-4 px-4">
+<span class="font-label-md text-label-md font-semibold text-night-navy block">8 Items · 24 Packs</span>
+<span class="font-mono-data text-mono-data text-muted-slate block mt-0.5">Family Mega Hamper + Sky Shots</span>
+</td>
+<td class="py-4 px-4 font-mono-price-md text-mono-price-md font-bold text-night-navy">
+              ₹8,450
+              <span class="block font-mono-data text-mono-data text-success-green font-normal">Prepaid in full</span>
+</td>
+<td class="py-4 px-4">
+<div class="inline-flex flex-col gap-1">
+<span class="inline-flex items-center gap-1 bg-success-green/15 text-success-green px-2.5 py-1 rounded font-mono-data text-mono-data font-bold">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                  Payment Received
+                </span>
+<span class="font-mono-data text-mono-data text-muted-slate">Bank Ref: ICICI-8831</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-cream-canvas text-charcoal-ink font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-diwali-gold text-[16px]">inventory_2</span>
+                Preparing / Packing
+              </span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="bg-night-navy hover:bg-secondary text-cream-canvas font-label-md text-label-md px-3 py-1.5 rounded-lg flex items-center gap-1 shadow-sm" onclick="dispatchOrder('SC1047')">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+<span>Dispatch</span>
+</button>
+<a class="bg-cream-canvas hover:bg-surface-variant text-night-navy p-1.5 rounded-lg" href="https://wa.me/919443211090" target="_blank">
+<span class="material-symbols-outlined text-success-green text-[18px]">chat</span>
+</a>
+</div>
+</td>
+</tr>
+<!-- Order 3: UTR Verification Pending -->
+<tr class="hover:bg-cream-canvas/50 transition-colors">
+<td class="py-4 px-4 font-mono-price-md text-mono-price-md font-bold text-night-navy">
+              #SC1046
+              <span class="block font-mono-data text-mono-data text-muted-slate font-normal mt-0.5">Today 09:30 AM</span>
+</td>
+<td class="py-4 px-4">
+<span class="font-headline-sm text-body-md font-bold text-night-navy block">Meena Sundaram</span>
+<a class="font-mono-data text-mono-data text-muted-slate hover:text-primary flex items-center gap-1 mt-0.5" href="tel:+919789045612">
+<span class="material-symbols-outlined text-[14px]">call</span> +91 97890 45612
+              </a>
+<span class="font-label-md text-label-md text-muted-slate block mt-1">Chennai (Royapettah Hub)</span>
+</td>
+<td class="py-4 px-4">
+<span class="font-label-md text-label-md font-semibold text-night-navy block">2 Items · 4 Packs</span>
+<span class="font-mono-data text-mono-data text-muted-slate block mt-0.5">12 Color Sky Shot, Sparklers</span>
+</td>
+<td class="py-4 px-4 font-mono-price-md text-mono-price-md font-bold text-night-navy">
+              ₹1,950
+              <span class="block font-mono-data text-mono-data text-muted-slate font-normal">₹150 standard parcel fee</span>
+</td>
+<td class="py-4 px-4">
+<div class="inline-flex flex-col gap-1">
+<span class="inline-flex items-center gap-1 bg-diwali-gold/20 text-charcoal-ink px-2.5 py-1 rounded font-mono-data text-mono-data font-bold">
+<span class="w-2 h-2 rounded-full bg-diwali-gold animate-pulse"></span>
+                  UPI Verification Pending
+                </span>
+<span class="font-mono-data text-mono-data text-charcoal-ink bg-surface-container px-2 py-0.5 rounded select-all font-semibold">
+                  UTR: 428909117621
+                </span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-error-container text-alert-red font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+                Awaiting Verification
+              </span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="bg-success-green hover:opacity-90 text-pure-surface font-label-md text-label-md px-2.5 py-1.5 rounded-lg flex items-center gap-1 shadow-sm" onclick="verifyOrder('SC1046')">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Verify</span>
+</button>
+<a class="bg-cream-canvas hover:bg-surface-variant text-night-navy p-1.5 rounded-lg" href="https://wa.me/919789045612" target="_blank">
+<span class="material-symbols-outlined text-success-green text-[18px]">chat</span>
+</a>
+</div>
+</td>
+</tr>
+<!-- Order 4: Dispatched -->
+<tr class="hover:bg-cream-canvas/50 transition-colors">
+<td class="py-4 px-4 font-mono-price-md text-mono-price-md font-bold text-night-navy">
+              #SC1045
+              <span class="block font-mono-data text-mono-data text-muted-slate font-normal mt-0.5">Today 08:12 AM</span>
+</td>
+<td class="py-4 px-4">
+<span class="font-headline-sm text-body-md font-bold text-night-navy block">Saravanan V.</span>
+<a class="font-mono-data text-mono-data text-muted-slate hover:text-primary flex items-center gap-1 mt-0.5" href="tel:+919840012988">
+<span class="material-symbols-outlined text-[14px]">call</span> +91 98400 12988
+              </a>
+<span class="font-label-md text-label-md text-muted-slate block mt-1">Salem Central Goods Office</span>
+</td>
+<td class="py-4 px-4">
+<span class="font-label-md text-label-md font-semibold text-night-navy block">5 Items · 18 Packs</span>
+<span class="font-mono-data text-mono-data text-muted-slate block mt-0.5">Deluxe Assorted Box</span>
+</td>
+<td class="py-4 px-4 font-mono-price-md text-mono-price-md font-bold text-night-navy">
+              ₹5,600
+              <span class="block font-mono-data text-mono-data text-success-green font-normal">Prepaid via GPay</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 bg-success-green/15 text-success-green px-2.5 py-1 rounded font-mono-data text-mono-data font-bold">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                Payment Received
+              </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-secondary-container text-on-secondary-fixed font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+                Dispatched (LR# 89201)
+              </span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="bg-cream-canvas hover:bg-surface-variant text-night-navy font-label-md text-label-md px-3 py-1.5 rounded-lg flex items-center gap-1" onclick="viewDetails('SC1045')">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+<span>Docket</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Quick Pagination / Status Legend Footer -->
+<div class="p-4 bg-cream-canvas flex flex-col sm:flex-row items-center justify-between gap-2">
+<div class="flex items-center gap-4">
+<span class="font-mono-data text-mono-data text-muted-slate">Showing 4 of 38 active orders</span>
+<div class="hidden md:flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-alert-red"></span>
+<span class="font-mono-data text-mono-data text-charcoal-ink">Pending UPI verification priority</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-3 py-1 rounded bg-pure-surface font-label-md text-label-md text-night-navy shadow-sm">1</button>
+<button class="px-3 py-1 rounded bg-transparent font-label-md text-label-md text-muted-slate hover:bg-pure-surface">2</button>
+<button class="px-3 py-1 rounded bg-transparent font-label-md text-label-md text-muted-slate hover:bg-pure-surface">3</button>
+</div>
+</div>
+</div>
+<!-- Bottom Grid Split: (Left) Product Inventory Quick Panel & (Right) WhatsApp Dispatch Preview -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- 3. Product Inventory & Price Management Quick Panel (7 Cols) -->
+<section class="lg:col-span-7 bg-pure-surface rounded-xl shadow-sm p-space-md flex flex-col justify-between" id="inventory-section">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data text-muted-slate uppercase tracking-wider">Depot Godown Master</span>
+<h2 class="font-headline-sm text-headline-sm text-night-navy font-bold">Fast Stock &amp; Festive Price Controls</h2>
+</div>
+<button class="bg-night-navy hover:bg-secondary text-cream-canvas font-label-md text-label-md px-3 py-2 rounded-lg flex items-center gap-1.5 shadow-sm transition-colors" onclick="addNewProductModal()">
+<span class="material-symbols-outlined text-[16px]">add_box</span>
+<span>Add Sivakasi SKU</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-cream-canvas font-mono-data text-mono-data text-muted-slate uppercase">
+<tr>
+<th class="py-2.5 px-3">Product Name &amp; Category</th>
+<th class="py-2.5 px-3">Orig. MRP</th>
+<th class="py-2.5 px-3">Offer Price</th>
+<th class="py-2.5 px-3">Stock Left</th>
+<th class="py-2.5 px-3 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-cream-canvas font-body-sm text-body-sm text-charcoal-ink">
+<!-- Product 1 -->
+<tr class="hover:bg-cream-canvas/40 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2.5">
+<img class="w-10 h-10 rounded-lg object-cover bg-cream-canvas" data-alt="Traditional Indian Flower Pots Deluxe Diwali cracker box with golden decorative packaging on plain white backdrop studio photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMfJ97NexZ99PwI4iuhOl3Y7jUO_HtH2HcsQria0L2nIDXoGcQguQC9GVCpgfYDD_UktrR58ccej9g9Jjv2K96uedkzFbjEbTqaSqMnULfWOlcQSJQmKCWpl5SzsQXpwyq5Z6pT-qbWZVzZQxJpjLj76-G5jI1KRa2rLhxNwqfauztZr6EPAA6dTwdaWa5dxjviBgZJs1EQ2W0NkOL9VdHaswb2IRpU_x31Z9IBaQ7HT34r4SfukCuZA"/>
+<div>
+<span class="font-label-lg text-label-lg font-bold text-night-navy block">Flower Pot Deluxe</span>
+<span class="font-mono-data text-mono-data text-muted-slate">Ground Sparklers · Box of 10</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-mono-price-md text-body-md text-muted-slate line-through">₹450</td>
+<td class="py-3 px-3 font-mono-price-md text-mono-price-md font-bold text-night-navy">₹249</td>
+<td class="py-3 px-3">
+<span class="font-mono-data text-mono-data px-2.5 py-1 rounded bg-cream-canvas text-night-navy font-bold">142 boxes</span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="bg-cream-canvas hover:bg-surface-variant text-night-navy font-label-md text-label-md px-2.5 py-1.5 rounded-lg flex items-center gap-1 ml-auto" onclick="editItemStock('Flower Pot Deluxe', 249, 142)">
+<span class="material-symbols-outlined text-[14px]">edit</span>
+<span>Edit</span>
+</button>
+</td>
+</tr>
+<!-- Product 2 (LOW STOCK) -->
+<tr class="hover:bg-cream-canvas/40 transition-colors bg-error-container/20">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2.5">
+<img class="w-10 h-10 rounded-lg object-cover bg-cream-canvas" data-alt="Red 1000 Wala Deluxe string firecracker roll in festive red and gold paper packaging studio product shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCezAyIEcK4hZ1Nfa2YpFuq-RQ0O3ADCYpUI66yxE7OrniSTsgIy1RpGI2r02sirgy0bwvRZ2nyWdMYDGRy6Tn691NZJK6cxUiaXOVpgKi0aIxqr1D3sp_9CrsfHzF8v8P6xM0sosXeg2gr3zufrA18FRlpIDVem2kTMIzKoEjz15PnEg6Syjll_Jzy2--Tc0HgAjNvjhaGthVNF63anIHR6OpCnpXQneEkZobqfP79y7p9Nr3LPtnvg"/>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-night-navy block">1000 Wala Deluxe</span>
+<span class="bg-alert-red text-pure-surface font-mono-data text-label-md px-1.5 py-0.2 rounded font-bold uppercase">Low Stock</span>
+</div>
+<span class="font-mono-data text-mono-data text-muted-slate">Traditional Crackers · 1 Roll</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-mono-price-md text-body-md text-muted-slate line-through">₹600</td>
+<td class="py-3 px-3 font-mono-price-md text-mono-price-md font-bold text-night-navy">₹299</td>
+<td class="py-3 px-3">
+<span class="font-mono-data text-mono-data px-2.5 py-1 rounded bg-error-container text-alert-red font-bold animate-pulse">48 left</span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="bg-diwali-gold hover:bg-primary-fixed-dim text-charcoal-ink font-label-md text-label-md px-2.5 py-1.5 rounded-lg flex items-center gap-1 ml-auto font-semibold" onclick="editItemStock('1000 Wala Deluxe', 299, 48)">
+<span class="material-symbols-outlined text-[14px]">add_shopping_cart</span>
+<span>Refill</span>
+</button>
+</td>
+</tr>
+<!-- Product 3 -->
+<tr class="hover:bg-cream-canvas/40 transition-colors">
+<td class="py-3 px-3">
+<div class="flex items-center gap-2.5">
+<img class="w-10 h-10 rounded-lg object-cover bg-cream-canvas" data-alt="12 Color Sky Shot aerial repeater cracker tube with bold Tamil and English brand labels against pure white backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpFTgic05tzViN3nAMPXKPpvCYZwJY6ts3PGbTeE5GLM2v_ooFfLLez18XRlfFbS8nlcKtm7qBFWnS6zCbZAQfZBDbc4675BeIXrXpQMlPzmgizzvNRsfO39VQFV9gldYUTk8pzqbiY3FzYcXetGa38esV-sgZW2shlz_kifMhxoFkmXZiYI125fE7aRtueMMykEW_OUW2d3NDQNfEJsllyUslUuXEpRC-igMJbSvBXa4ng02cRnQObA"/>
+<div>
+<span class="font-label-lg text-label-lg font-bold text-night-navy block">12 Color Sky Shot</span>
+<span class="font-mono-data text-mono-data text-muted-slate">Aerial Repeaters · Single Tube</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 font-mono-price-md text-body-md text-muted-slate line-through">₹1,100</td>
+<td class="py-3 px-3 font-mono-price-md text-mono-price-md font-bold text-night-navy">₹580</td>
+<td class="py-3 px-3">
+<span class="font-mono-data text-mono-data px-2.5 py-1 rounded bg-cream-canvas text-night-navy font-bold">86 left</span>
+</td>
+<td class="py-3 px-3 text-right">
+<button class="bg-cream-canvas hover:bg-surface-variant text-night-navy font-label-md text-label-md px-2.5 py-1.5 rounded-lg flex items-center gap-1 ml-auto" onclick="editItemStock('12 Color Sky Shot', 580, 86)">
+<span class="material-symbols-outlined text-[14px]">edit</span>
+<span>Edit</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between bg-cream-canvas p-3 rounded-lg">
+<span class="font-mono-data text-mono-data text-muted-slate">Rates updated from Sivakasi Master Price List</span>
+<button class="font-label-md text-label-md text-primary font-bold hover:underline flex items-center gap-1">
+<span>View all 48 Catalog SKUs</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- 4. Owner WhatsApp & Email Notification Dispatch Panel (5 Cols) -->
+<section class="lg:col-span-5 bg-pure-surface rounded-xl shadow-sm p-space-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data text-muted-slate uppercase tracking-wider">Automated Notification Stream</span>
+<h2 class="font-headline-sm text-headline-sm text-night-navy font-bold">Store Owner Alert &amp; Dispatch Slip</h2>
+</div>
+<span class="w-3 h-3 rounded-full bg-success-green" title="Webhook Active"></span>
+</div>
+<!-- WhatsApp Dispatch Payload Simulator Card -->
+<div class="bg-cream-canvas rounded-xl p-4 font-mono-data text-mono-data text-charcoal-ink flex flex-col gap-2 relative">
+<div class="flex items-center justify-between bg-pure-surface p-2 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-success-green text-[20px]">chat</span>
+<span class="font-label-md text-label-md font-bold text-night-navy">Incoming WhatsApp Webhook Payload</span>
+</div>
+<span class="text-muted-slate">ID: #SC1048</span>
+</div>
+<div class="bg-pure-surface p-3 rounded-lg text-body-sm font-mono-data space-y-1.5">
+<p class="font-bold text-night-navy">💥 *NEW SUJITH CRACKER ORDER #SC1048*</p>
+<p>👤 *Customer:* Karthik S. (+91 98421 77340)</p>
+<p>📍 *Delivery:* Door 4, Anna Nagar 2nd St, Madurai - 625020</p>
+<div class="my-2 py-1 bg-cream-canvas px-2 rounded">
+<p>📦 *Cart Contents:*</p>
+<p>• 1000 Wala Deluxe (x2) - ₹598</p>
+<p>• Flower Pot Deluxe (x4) - ₹996</p>
+<p>• 12 Color Sky Shot (x4) - ₹2,320</p>
+<p>• Ground Chakkar Special (x2) - ₹186</p>
+</div>
+<p>💰 *Subtotal:* ₹4,100</p>
+<p>🚚 *Hub Delivery Fee:* ₹0 (Free above ₹3,000)</p>
+<p class="font-bold text-night-navy">💵 *Total Received:* ₹4,100</p>
+<p class="text-primary font-bold">💳 *UPI Reference:* 428910834920</p>
+</div>
+</div>
+</div>
+<!-- Quick Action Triggers for Owner -->
+<div class="mt-4 flex flex-col gap-2">
+<a class="w-full bg-success-green hover:opacity-95 text-pure-surface font-label-lg text-label-lg py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 shadow-sm transition-transform active:translate-y-0.5 font-bold" href="https://wa.me/919842177340?text=Vanakkam%20Karthik%20Sir,%20Sujith%20Crackers%20Sivakasi%20confirmed%20receipt%20of%20Rs.4,100%20(Ref:%20428910834920).%20Your%20order%20%23SC1048%20is%20packed%20safely%20and%20moving%20to%20dispatch." target="_blank">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>1-Click Send Customer Confirmation WhatsApp</span>
+</a>
+<div class="flex items-center gap-2">
+<button class="flex-1 bg-cream-canvas hover:bg-surface-variant text-night-navy font-label-md text-label-md py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 transition-colors" onclick="printDispatchDocket('SC1048')">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>Print Sivakasi Docket</span>
+</button>
+<button class="bg-cream-canvas hover:bg-surface-variant text-night-navy font-label-md text-label-md py-2 px-3 rounded-lg flex items-center justify-center gap-1 transition-colors" onclick="copyPayload()">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copy Text</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Notification Toast Container (Dynamic JS) -->
+<div class="fixed bottom-6 right-6 bg-night-navy text-pure-surface px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 z-50" id="admin-toast">
+<span class="material-symbols-outlined text-diwali-gold text-[22px]">check_circle</span>
+<span class="font-body-sm text-body-sm font-medium" id="toast-message">Notification triggered</span>
+</div>
+<!-- Inline Dashboard Micro-Interactions -->
+<script>
+    function showToast(message) {
+      const toast = document.getElementById('admin-toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.textContent = message;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3200);
+    }
+
+    function verifyOrder(orderId) {
+      showToast('Payment verified for ' + orderId + '. Status updated to Confirmed.');
+    }
+
+    function dispatchOrder(orderId) {
+      showToast('Dispatch consignment created for ' + orderId + ' from Sivakasi Depot.');
+    }
+
+    function viewDetails(orderId) {
+      showToast('Loading full Sivakasi invoice & audit for ' + orderId);
+    }
+
+    function editItemStock(name, price, stock) {
+      const newStock = prompt('Enter new stock level for ' + name + ' (Current: ' + stock + '):', stock);
+      if (newStock !== null) {
+        showToast('Updated ' + name + ' stock to ' + newStock + ' units.');
+      }
+    }
+
+    function addNewProductModal() {
+      showToast('Opening Sivakasi SKU catalog import tool...');
+    }
+
+    function copyPayload() {
+      navigator.clipboard?.writeText("ORDER #SC1048 - Karthik S. - Total ₹4,100 - UTR: 428910834920");
+      showToast('WhatsApp dispatch summary copied to clipboard.');
+    }
+
+    function printDispatchDocket(orderId) {
+      showToast('Generating official 3-ply Sivakasi transport permit for ' + orderId);
+    }
+
+    function refreshDashboard() {
+      showToast('Real-time order sync with Sivakasi server complete.');
+    }
+  </script>
+</div></main></div></body></html>
